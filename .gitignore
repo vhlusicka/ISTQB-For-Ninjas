@@ -1,0 +1,35 @@
+# Dependencies
+node_modules/
+
+# Next.js build output
+.next/
+out/
+
+# Test output
+coverage/
+playwright-report/
+test-results/
+
+# Local environment and secrets
+.env
+.env.local
+.env.*.local
+
+# Logs and editor files
+*.log
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# TypeScript
+*.tsbuildinfo
+
+# Vercel
+.vercel/
+
+# Supabase local development
+.supabase/
+
+# Add private or copyrighted knowledge-database materials below if they must
+# not be committed.

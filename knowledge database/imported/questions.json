@@ -1,0 +1,114 @@
+{
+  "questions": [
+    {
+      "question_text": "Which one of the following answers describes a test condition?",
+      "required_selections": 1,
+      "explanation": "A test condition is a testable aspect of a component or system identified as a basis for testing.",
+      "answers": [
+        { "answer_text": "A distinguishing characteristic of a component or system", "correct": false },
+        { "answer_text": "A testable aspect of a component or system identified as a basis for testing", "correct": true },
+        { "answer_text": "The degree to which a software product provides functions which meet stated and implied needs when used under specified conditions", "correct": false },
+        { "answer_text": "Test cases designed to execute combinations of conditions and actions resulting from them", "correct": false }
+      ]
+    },
+    {
+      "question_text": "Which of the following statements is a valid objective for testing?",
+      "required_selections": 1,
+      "explanation": "Validating whether the test object works as users and other stakeholders expect is an objective of testing. Testing cannot prove that every possible defect is found.",
+      "answers": [
+        { "answer_text": "The test should start as late as possible so development has enough time to create a good product", "correct": false },
+        { "answer_text": "To validate whether the test object works as expected by users and other stakeholders", "correct": true },
+        { "answer_text": "To prove that all possible defects are identified", "correct": false },
+        { "answer_text": "To prove that any remaining defects will not cause failures", "correct": false }
+      ]
+    },
+    {
+      "question_text": "Which statement correctly describes the difference between testing and debugging?",
+      "required_selections": 1,
+      "explanation": "Dynamic testing can expose failures caused by defects. Debugging finds and eliminates the defects that caused those failures.",
+      "answers": [
+        { "answer_text": "Testing identifies the source of defects; debugging analyzes defects and proposes prevention activities", "correct": false },
+        { "answer_text": "Dynamic testing shows failures caused by defects; debugging eliminates the defects that are the source of failures", "correct": true },
+        { "answer_text": "Testing removes faults; debugging removes defects that cause the faults", "correct": false },
+        { "answer_text": "Dynamic testing prevents the causes of failures; debugging removes the failures", "correct": false }
+      ]
+    },
+    {
+      "question_text": "Which statement describes the most common situation for a failure discovered during testing or in production?",
+      "required_selections": 1,
+      "explanation": "A product crash is an externally observable failure. The other options describe defects that may or may not cause a visible failure.",
+      "answers": [
+        { "answer_text": "The product crashed when the user selected an option in a dialog box", "correct": true },
+        { "answer_text": "The wrong version of a compiled source code file was included in the build", "correct": false },
+        { "answer_text": "The computation algorithm used the wrong input variables", "correct": false },
+        { "answer_text": "The developer misinterpreted the requirement for the algorithm", "correct": false }
+      ]
+    },
+    {
+      "question_text": "An experienced mobile tester repeatedly runs the same automated tests for months and finds fewer defects. Which testing principle was not observed?",
+      "required_selections": 1,
+      "explanation": "Tests wear out: repeating the same tests eventually stops revealing new defects, so tests and test data need to be reviewed and refreshed.",
+      "answers": [
+        { "answer_text": "Testing depends on the environment", "correct": false },
+        { "answer_text": "Exhaustive testing is not possible", "correct": false },
+        { "answer_text": "Repeating the same tests will not find new defects", "correct": true },
+        { "answer_text": "Defects cluster together", "correct": false }
+      ]
+    },
+    {
+      "question_text": "In what way can testing be part of quality assurance?",
+      "required_selections": 1,
+      "explanation": "Testing contributes to quality by reducing the risk of inadequate software quality; it cannot ensure complete requirements or measure quality merely by counting test cases.",
+      "answers": [
+        { "answer_text": "It ensures that requirements are detailed enough", "correct": false },
+        { "answer_text": "Testing reduces the risk of poor software quality", "correct": true },
+        { "answer_text": "It ensures that standards in the organization are followed", "correct": false },
+        { "answer_text": "It measures software quality by the number of executed test cases", "correct": false }
+      ]
+    },
+    {
+      "question_text": "Which activity is part of test analysis in the test process?",
+      "required_selections": 1,
+      "explanation": "Evaluating the test basis for testability is a test analysis activity. Infrastructure belongs to design, suites to implementation, and lessons learned to completion.",
+      "answers": [
+        { "answer_text": "Identifying any required infrastructure and tools", "correct": false },
+        { "answer_text": "Creating test suites from test scripts", "correct": false },
+        { "answer_text": "Analyzing lessons learned for process improvement", "correct": false },
+        { "answer_text": "Evaluating the test basis for testability", "correct": true }
+      ]
+    },
+    {
+      "question_text": "Match these test work products with their descriptions: 1. Test suite, 2. Test case, 3. Test script, 4. Test charter. A. Scripts for a test run, B. Execution instructions, C. Contains expected results, D. Session-based exploratory testing documentation.",
+      "required_selections": 1,
+      "explanation": "A suite groups scripts for a run (1A), a test case contains expected results (2C), a script contains execution instructions (3B), and a charter documents exploratory testing activities (4D).",
+      "answers": [
+        { "answer_text": "1A, 2C, 3B, 4D", "correct": true },
+        { "answer_text": "1D, 2B, 3A, 4C", "correct": false },
+        { "answer_text": "1A, 2C, 3D, 4B", "correct": false },
+        { "answer_text": "1D, 2C, 3B, 4A", "correct": false }
+      ]
+    },
+    {
+      "question_text": "How can white-box testing be applied during user acceptance testing?",
+      "required_selections": 1,
+      "explanation": "At acceptance level, white-box coverage can be based on business or work-process flows defined by functional requirements.",
+      "answers": [
+        { "answer_text": "To check whether large volumes of data can be transferred between integrated systems", "correct": false },
+        { "answer_text": "To check whether all code statements and decision paths have been executed", "correct": false },
+        { "answer_text": "To check whether all work-process flows have been covered", "correct": true },
+        { "answer_text": "To cover all web-page navigations", "correct": false }
+      ]
+    },
+    {
+      "question_text": "Which statement comparing component testing and system testing is true?",
+      "required_selections": 1,
+      "explanation": "Component tests commonly derive from detailed design, code, data models, or component specifications; system tests commonly derive from requirement specifications or use cases.",
+      "answers": [
+        { "answer_text": "Component testing verifies modules while system testing verifies interfaces between components", "correct": false },
+        { "answer_text": "Component test cases usually derive from component specifications, designs, or data models, while system test cases usually derive from requirements or use cases", "correct": true },
+        { "answer_text": "Component testing focuses only on functional characteristics while system testing covers functional and non-functional characteristics", "correct": false },
+        { "answer_text": "Component testing is the testers' responsibility while system testing is typically the users' responsibility", "correct": false }
+      ]
+    }
+  ]
+}

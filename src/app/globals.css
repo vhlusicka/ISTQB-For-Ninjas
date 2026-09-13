@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --paper: 246 243 235;
+  --panel: 255 253 247;
+  --ink: 24 24 22;
+  --muted: 103 99 89;
+  --line: 190 184 169;
+  --signal: 221 52 46;
+  --acid: 205 235 70;
+  --font-body: "Trebuchet MS", "Segoe UI", sans-serif;
+  --font-display: "Arial Narrow", "Roboto Condensed", "Franklin Gothic Condensed", sans-serif;
+  --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+}
+
+.dark {
+  --paper: 19 20 18;
+  --panel: 29 30 27;
+  --ink: 244 241 231;
+  --muted: 174 170 159;
+  --line: 77 78 70;
+  --signal: 244 75 63;
+  --acid: 205 235 70;
+}
+
+* {
+  border-color: rgb(var(--line));
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  color: rgb(var(--ink));
+  background-color: rgb(var(--paper));
+  background-image:
+    linear-gradient(rgb(var(--ink) / 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(var(--ink) / 0.035) 1px, transparent 1px);
+  background-size: 28px 28px;
+  font-family: var(--font-body);
+}
+
+::selection {
+  color: rgb(var(--ink));
+  background: rgb(var(--acid));
+}
+
+:focus-visible {
+  outline: 3px solid rgb(var(--signal));
+  outline-offset: 3px;
+}
+
+button,
+a,
+input {
+  -webkit-tap-highlight-color: transparent;
+}
+
+@layer components {
+  .shell {
+    @apply mx-auto w-full max-w-6xl px-5 sm:px-8 lg:px-10;
+  }
+
+  .eyebrow {
+    @apply font-mono text-[11px] font-bold uppercase tracking-[0.22em] text-muted;
+  }
+
+  .display-title {
+    @apply font-display font-black uppercase leading-[0.88] tracking-[-0.055em];
+  }
+
+  .hard-card {
+    @apply border-2 border-ink bg-panel shadow-hard;
+  }
+
+  .primary-button {
+    @apply inline-flex min-h-12 items-center justify-center gap-3 border-2 border-ink bg-signal px-6 py-3 font-display text-base font-black uppercase tracking-[0.08em] text-white shadow-hard-sm transition-transform hover:-translate-x-0.5 hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:translate-x-0 disabled:hover:translate-y-0 dark:text-white;
+  }
+
+  .secondary-button {
+    @apply inline-flex min-h-12 items-center justify-center gap-2 border-2 border-ink bg-panel px-5 py-3 font-display text-sm font-black uppercase tracking-[0.08em] text-ink transition-colors hover:bg-ink hover:text-paper disabled:cursor-not-allowed disabled:opacity-40;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .enter {
+    animation: enter 420ms cubic-bezier(.2,.8,.2,1) both;
+  }
+
+  @keyframes enter {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
