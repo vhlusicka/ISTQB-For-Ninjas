@@ -122,7 +122,7 @@ export function QuizScreen() {
             <span className="eyebrow text-signal">{instruction}</span>
             <span className="font-mono text-[10px] uppercase tracking-wider text-muted">{selected.length}/{question.requiredSelections} selected</span>
           </div>
-          <h2 className="mt-7 text-xl font-bold leading-snug sm:text-2xl">{question.questionText}</h2>
+          <h2 className="mt-7 whitespace-pre-line text-xl font-bold leading-snug sm:text-2xl">{question.questionText}</h2>
 
           <fieldset className="mt-8 space-y-3">
             <legend className="sr-only">{instruction}</legend>

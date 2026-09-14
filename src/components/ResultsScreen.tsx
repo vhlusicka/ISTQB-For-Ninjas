@@ -19,7 +19,7 @@ function ReviewCard({ result, index }: { result: QuestionResult; index: number }
         </span>
       </div>
       <div className="p-5 sm:p-7">
-        <h3 className="text-lg font-bold leading-snug sm:text-xl">{result.questionText}</h3>
+        <h3 className="whitespace-pre-line text-lg font-bold leading-snug sm:text-xl">{result.questionText}</h3>
         <div className="mt-6 space-y-2">
           {result.answers.map((answer, answerIndex) => {
             const wrongPick = answer.selected && !answer.correct;

@@ -18,3 +18,6 @@ All notable changes to **ISTQB for ninjas** are documented here.
 - Project README, environment template, materials guide, and `.gitignore`.
 - Added and last-edited timestamps for answer records, including an upgrade migration for existing databases.
 - Consolidated question sources under `knowledge database/`, separating official and supplementary sample exams.
+- Added 150 validated, source-referenced questions from four official sample exams, bringing the available total to 160.
+- Added reproducible PDF extraction and exact-question duplicate detection for imports.
+- Corrected the explanation for Sample Exam C question 31, whose published rationale contradicts its marked answer and references an undefined test case.

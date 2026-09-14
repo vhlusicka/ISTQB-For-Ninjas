@@ -41,3 +41,5 @@ knowledge database/
 Store reviewed imports in `imported/` using the format documented in the project README. Invalid or uncertain questions must not be enabled.
 
 The initial reviewed dataset in `imported/questions.json` comes from the official **ISTQB Certified Tester Foundation Level Sample Exam set A, version 1.7 (2022)** question and answer PDFs in `sample exams/official/`.
+
+The expanded dataset in `imported/official-sample-exams-additional.json` is reproducibly extracted from all four official question-and-answer pairs in `sample exams/official/`. It excludes the first ten Set A questions already present in the initial dataset. Each entry includes its exact source reference, and its explanation comes from the corresponding official answer rationale. The supplied CTFL v4.0.1 syllabus is recorded as the current supporting concept reference; no unsupported questions are synthesized from it.
