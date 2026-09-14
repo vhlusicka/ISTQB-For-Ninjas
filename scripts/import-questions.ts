@@ -25,8 +25,22 @@ async function main() {
 
   const supabase = createClient(url, key, { auth: { persistSession: false, autoRefreshToken: false } });
   let imported = 0;
+  let skipped = 0;
+
+  const { data: existingRows, error: existingError } = await supabase
+    .from("questions")
+    .select("question_text");
+  if (existingError) throw new Error(`Could not check existing questions: ${existingError.message}`);
+  const existingQuestionTexts = new Set(
+    (existingRows ?? []).map((row: { question_text: string }) => row.question_text.trim())
+  );
 
   for (const question of parsed.data.questions) {
+    if (existingQuestionTexts.has(question.question_text.trim())) {
+      skipped += 1;
+      continue;
+    }
+
     // Insert disabled so the deferred database invariant permits answers to be
     // added safely. Only enable after the entire question is valid and stored.
     const { data: inserted, error: questionError } = await supabase
@@ -59,9 +73,10 @@ async function main() {
       }
     }
     imported += 1;
+    existingQuestionTexts.add(question.question_text.trim());
   }
 
-  console.log(`Imported ${imported} validated questions from ${source}.`);
+  console.log(`Imported ${imported} validated questions from ${source}; skipped ${skipped} exact duplicates.`);
 }
 
 main().catch((error: unknown) => {

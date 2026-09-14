@@ -11,7 +11,8 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "test:e2e": "playwright test",
-    "import-questions": "tsx scripts/import-questions.ts"
+    "import-questions": "tsx scripts/import-questions.ts",
+    "extract-official-questions": "tsx scripts/extract-official-sample-exams.ts"
   },
   "dependencies": {
     "@supabase/supabase-js": "2.50.0",

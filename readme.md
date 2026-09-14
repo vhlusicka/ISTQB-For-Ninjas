@@ -36,7 +36,7 @@ npm run test:e2e
 
 ## Supabase setup
 
-The repository does not include a connected database or database credentials. Until Supabase is configured, the application uses the server-only development questions in `src/lib/quiz/demo-data.ts`.
+The repository does not include a connected database or database credentials. Until Supabase is configured, the application uses the validated import documents through the server-only adapter in `src/lib/quiz/demo-data.ts`.
 
 ### 1. Create the database
 
@@ -83,7 +83,21 @@ Run the validated importer from the repository root:
 npm run import-questions -- "./knowledge database/imported/questions.json"
 ```
 
-The importer validates the complete JSON document before inserting questions. Run the current import only once: version 0.1 does not yet detect duplicate questions automatically.
+Import the expanded official sample-exam dataset as well:
+
+```bash
+npm run import-questions -- "./knowledge database/imported/official-sample-exams-additional.json"
+```
+
+The two files contain 160 unique questions in total: the original 10 reviewed questions plus 150 additional questions paired with official answer keys and rationales. The importer validates the complete JSON document before inserting anything and skips questions whose exact question text already exists, so the commands can be rerun safely.
+
+The expanded dataset can be regenerated from the official source PDFs with:
+
+```bash
+npm run extract-official-questions
+```
+
+The extraction report records its source files and any excluded questions in the generated JSON metadata.
 
 ### 4. Inspect the data
 
@@ -112,7 +126,7 @@ Correct-answer flags and explanations are visible to database administrators in 
 
 ## Question material
 
-Read [`knowledge database/CODEX_MATERIALS_GUIDE.md`](knowledge%20database/CODEX_MATERIALS_GUIDE.md) before adding content. All source material now lives under the canonical `knowledge database/` directory. Official ISTQB PDFs are in `sample exams/official/`, while third-party practice papers are isolated in `sample exams/supplementary/`. Questions must never be invented or assigned guessed answers.
+Read [`knowledge database/CODEX_MATERIALS_GUIDE.md`](knowledge%20database/CODEX_MATERIALS_GUIDE.md) before adding content. All source material lives under the canonical `knowledge database/` directory. Official ISTQB PDFs are in `sample exams/official/`, while third-party practice papers are isolated in `sample exams/supplementary/`. Questions must never be invented or assigned guessed answers. The official CTFL v4.0.1 syllabus is the current concept reference; the expanded sample questions retain their source syllabus/version in each explanation.
 
 Import files use this shape:
 
